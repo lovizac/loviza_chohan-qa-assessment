@@ -12,3 +12,7 @@ lib-cov/
 
 # Environment variables
 .env
+
+node_modules/
+output.json
+contractAddress.txt
