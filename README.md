@@ -69,5 +69,5 @@ A `Dockerfile` is provided to containerize the application. You can build and ru
 2. Run the Docker Container
 `docker run -e PRIVATE_KEY=[YOUR_PRIVATE_KEY] loviza_chohan-qa-assessment`
 
-Note: Before running any scripts, ensure you've provided your Ethereum private key. 
+Note: Before running the docker container, ensure you've provided your Ethereum private key. INFRURA_PROJECT_ID and VALUE have been populated in the Dockerfile but if you wish to use your own, go ahead and provide it when running the docker container. 
 
