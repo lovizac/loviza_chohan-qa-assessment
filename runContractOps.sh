@@ -14,6 +14,10 @@ sleep 20
 # Extract the contract address from the output
 CONTRACT_ADDRESS=$(echo "$DEPLOY_OUTPUT" | grep "Contract deployed to:" | cut -d' ' -f4)
 
+# Extract the deployer address from the output
+DEPLOYER_ADDRESS=$(echo "$DEPLOY_OUTPUT" | grep "Deployer Address:" | cut -d' ' -f3)
+
+
 # Set the values
 npx hardhat run scripts/setValue.js --network sepolia
 
@@ -28,6 +32,7 @@ BYTES_VALUE=$(echo "$GET_OUTPUT" | grep "Retrieved bytes value:" | cut -d' ' -f4
 # Write the data to output.json
 echo "{
   \"contractAddress\": \"$CONTRACT_ADDRESS\",
+  \"deployerAddress\": \"$DEPLOYER_ADDRESS\",
   \"uint256Value\": $UINT256_VALUE,
   \"bytes32Value\": \"$BYTES32_VALUE\",
   \"bytesValue\": \"$BYTES_VALUE\"

@@ -4,7 +4,8 @@ async function main() {
     const fs = require('fs');
 
     const [deployer] = await ethers.getSigners();
-    console.log("Deploying contracts with the account:", deployer.address);
+    console.log("Deployer Address:", deployer.address);
+
 
     const Contract = await ethers.getContractFactory("GetterSetter");
     const contract = await Contract.deploy();
